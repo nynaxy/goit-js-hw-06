@@ -1,16 +1,9 @@
-function giveInfo() {
-  const listItems = document.querySelectorAll("li.item");
+const allCategories = window.document.querySelectorAll(".item");
+console.log(`Number of categories: ${allCategories.length}`);
 
-  console.log(`Number of categories: ${listItems.length}`);
+allCategories.forEach((category) => {
+    console.log(`Category: ${category.querySelector("h2").textContent}`);
+    console.log(`Elements: ${category.querySelectorAll("li").length}`);
+ }
 
-  listItems.forEach((item) => {
-    const secondHeading = item.firstElementChild;
-    const categoryList = secondHeading.nextElementSibling;
-    const categoryListItems = categoryList.children;
-
-    console.log(`Category: ${secondHeading.textContent}`);
-    console.log(`Elements: ${categoryListItems.length}`);
-  });
-}
-
-giveInfo();
+) 
